@@ -1,0 +1,26 @@
+﻿body {
+    background-color: beige;
+
+}
+.navbar{
+    padding:0;
+    margin-bottom : 15vh;
+    border:0;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
