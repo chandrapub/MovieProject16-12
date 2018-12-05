@@ -13,28 +13,28 @@ using System.Xml;
 using System.Drawing;
 using System.Xml.Xsl;
 
-namespace OMDB_UseService
+namespace MovieProject
 {
     public partial class index : System.Web.UI.Page
     {
+        
         WebClient client;
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new WebClient();
+            
         }
 
         protected void ButtonFind_Click(object sender, EventArgs e)
         {
+            
             try
             {
               
                 string reply = "";
                 if (TextBoxName.Text == " ") TextBoxName.Text = "No Name";
-                
-               
-                reply = client.DownloadString("http://www.omdbapi.com/?t=" + TextBoxName.Text + "&r=xml&apikey=3dc0ab16");
-   
-                File.WriteAllText(Server.MapPath("~/MyFiles/LatestResult.xml"), reply);
+                reply = UtilityClass.RequestAPI(TextBoxName.Text);   
+                //File.WriteAllText(Server.MapPath("~/MyFiles/LatestResult.xml"), reply);
                 XmlDocument doc = new XmlDocument();
                 doc.LoadXml(reply);
 
@@ -46,7 +46,8 @@ namespace OMDB_UseService
                         string id = node.SelectSingleNode("@poster").InnerText;
                         ImagePoster.ImageUrl = id;
                     }
-                    LabelResult.Text += "(" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
+                    LabelResult.Text = nodelist[0].SelectSingleNode("@title").InnerText;
+                    LabelResult.Text += " (" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
                     LabelDirected.Text = "Directed by: " + nodelist[0].SelectSingleNode("@director").InnerText;
                     LabelActors.Text = "Starring: " + nodelist[0].SelectSingleNode("@actors").InnerText;
                     LabelRating.Text = "Child Rating: " + nodelist[0].SelectSingleNode("@rated").InnerText;
@@ -55,8 +56,10 @@ namespace OMDB_UseService
                 else
                 {
                     LabelResult.Text = "Movie not found...";
-                    ImagePoster.ImageUrl = "~/img/placehold.jpg";
-                    LabelResult.Text += "Results..";
+                    ImagePoster.ImageUrl = "~/img/ErrorImg.jpg";
+                    LabelDirected.Text = "";
+                    LabelActors.Text = "";
+                    LabelRating.Text = "";
                 }
 
             }
@@ -67,6 +70,10 @@ namespace OMDB_UseService
             catch (Exception ex)
             {
                 LabelResult.Text = ex.ToString();
+            }
+            finally
+            {
+                
             }
 
 

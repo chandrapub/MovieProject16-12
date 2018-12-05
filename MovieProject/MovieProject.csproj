@@ -78,6 +78,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap2.min.css" />
+    <Content Include="img\ErrorImg.jpg" />
     <Content Include="img\placehold.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Content\StyleSheet.css" />
@@ -137,6 +138,7 @@
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

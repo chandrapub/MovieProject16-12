@@ -24,21 +24,20 @@ namespace MovieProject
         }
        
         public void ShowMyMovies()
-        {
-            SqlConnection conn = new SqlConnection(@"data source = LAPTOP-9C071575; integrated security = true; database = Movies");
-            SqlCommand cmd = null;
+        {           
             SqlDataReader rdr = null;
-
+            SqlCommand cmd = null;
+            string sqlsel = "";
+            SqlConnection conn = UtilityClass.CreateConnection();
             try
-            {
+            {              
                 conn.Open();
-
-                cmd = conn.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select * FROM action order by year desc";
+                sqlsel = "select * from Action order by name asc";
+                cmd = new SqlCommand(sqlsel, conn);
 
                 rdr = cmd.ExecuteReader();
-                GridViewMovies.DataSource = rdr;
+
+                GridViewMovies.DataSource= rdr;
                 GridViewMovies.DataBind();
 
             }
@@ -65,7 +64,8 @@ namespace MovieProject
             string reply = "";
             reply = client.DownloadString("http://www.omdbapi.com/?t=" + href + "&r=xml&apikey=3dc0ab16");
 
-            File.WriteAllText(Server.MapPath("~/MyFiles/LatestResultAction.xml"), reply);
+            //Tjek i LatestResultAction.xml
+            //File.WriteAllText(Server.MapPath("~/MyFiles/LatestResultAction.xml"), reply);
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(reply);
 

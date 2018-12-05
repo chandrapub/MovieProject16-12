@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OMDB_UseService {
+namespace MovieProject {
     
     
     public partial class index {

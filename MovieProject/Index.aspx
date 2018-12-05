@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="OMDB_UseService.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MovieProject.index" %>
 
 <!DOCTYPE html>
 
@@ -52,14 +52,14 @@
             <asp:Label ID="LabelResult" runat="server" Text="Result"></asp:Label></div>
           
             <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelDirected" runat="server" Text="Directed by: "></asp:Label> </div>
+            <asp:Label ID="LabelDirected" runat="server"></asp:Label> </div>
                
                       <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelActors" runat="server" Text="Starring: "></asp:Label> </div>
+                <asp:Label ID="LabelActors" runat="server"></asp:Label> </div>
                
                 
                            <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelRating" runat="server" Text="Rating: "></asp:Label> </div>
+                <asp:Label ID="LabelRating" runat="server"></asp:Label> </div>
         </div>
     </form>
 </body>
