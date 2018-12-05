@@ -60,7 +60,7 @@ namespace MovieProject
 
             var href = anchor.InnerText;
             //--do something
-            LabelResult.Text = anchor.InnerText.ToString();
+          
             string reply = "";
             reply = client.DownloadString("http://www.omdbapi.com/?t=" + href + "&r=xml&apikey=3dc0ab16");
 
@@ -72,12 +72,43 @@ namespace MovieProject
             if (doc.SelectSingleNode("/root/@response").InnerText == "True")
             {
                 XmlNodeList nodelist = doc.SelectNodes("/root/movie");
-                LabelResult.Text += "(" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
+                object name = nodelist[0].SelectSingleNode("@title").InnerText;
+                LabelResult.Text = nodelist[0].SelectSingleNode("@title").InnerText;
+                LabelResult.Text += " (" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
                 LabelDirected.Text = "Directed by: " + nodelist[0].SelectSingleNode("@director").InnerText;
                 LabelActors.Text = "Starring: " + nodelist[0].SelectSingleNode("@actors").InnerText;
                 LabelRating.Text = "Child Rating: " + nodelist[0].SelectSingleNode("@rated").InnerText;
                 ImagePoster.ImageUrl = nodelist[0].SelectSingleNode("@poster").InnerText;
+
+                SqlCommand cmd = null;
+                string sqlupdate = "";
+                SqlConnection con = UtilityClass.CreateConnection();
+
+                try
+                {
+                    con.Open();
+                    sqlupdate = "Update Action Set Counter = Counter + 1 Where Name = @title";
+                    cmd = new SqlCommand(sqlupdate, con);
+                    cmd.Parameters.AddWithValue("@title", name);
+                    cmd.ExecuteNonQuery();
+                }
+
+                catch (Exception ex)
+                {
+                    LabelMessages.Text = "Dette er en Exception: " + ex.Message;
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
+
+            else
+            {
+                LabelResult.Text = "Movie not found";
+                ImagePoster.ImageUrl = "~/img/ErrorImg.jpg";
+            }
+
 
 
         }

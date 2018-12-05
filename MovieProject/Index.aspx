@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Open Movie Database</title>
-  <%--  <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
+    <%--  <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
      <link href="Content/bootstrap2.min.css" rel="stylesheet" />
     <link href="Content/StyleSheet.css" rel="stylesheet" />
      <link href="Scripts/animate.css" rel="stylesheet" />
@@ -59,7 +59,10 @@
                
                 
                            <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelRating" runat="server"></asp:Label> </div>
+                <asp:Label ID="LabelRating" runat="server"></asp:Label> 
+                               <br />
+                               <asp:Label ID="LabelMessages" runat="server"></asp:Label>
+             </div>
         </div>
     </form>
 </body>

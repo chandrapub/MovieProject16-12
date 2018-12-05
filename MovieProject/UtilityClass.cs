@@ -9,7 +9,7 @@ namespace MovieProject
 {
     public class UtilityClass
     {
-        WebClient client;
+        
         public static SqlConnection CreateConnection()
         {          
             SqlConnection conn = new SqlConnection(@"data source = LAPTOP-9C071575; integrated security = true; database = Movies");       
