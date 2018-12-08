@@ -22,6 +22,15 @@ namespace MovieProject
             reply = client.DownloadString("http://www.omdbapi.com/?t=" + search + "&r=xml&apikey=3dc0ab16");
             return reply;
         }
+        public static string TrailerAPI(string search)
+        {
+            WebClient client = new WebClient();
+            string reply = "";
+            string myselection = search.Replace(' ', '-');
+
+            reply = client.DownloadString("http://simpleapi.traileraddict.com/" + myselection + "/trailer");
+            return reply;
+        }
     }
     
 }

@@ -62,7 +62,7 @@ namespace MovieProject
             //--do something
           
             string reply = "";
-            reply = client.DownloadString("http://www.omdbapi.com/?t=" + href + "&r=xml&apikey=3dc0ab16");
+            reply = UtilityClass.RequestAPI(href);
 
             //Tjek i LatestResultAction.xml
             //File.WriteAllText(Server.MapPath("~/MyFiles/LatestResultAction.xml"), reply);
@@ -73,24 +73,34 @@ namespace MovieProject
             {
                 XmlNodeList nodelist = doc.SelectNodes("/root/movie");
                 object name = nodelist[0].SelectSingleNode("@title").InnerText;
+                object picture = nodelist[0].SelectSingleNode("@poster").InnerText;
                 LabelResult.Text = nodelist[0].SelectSingleNode("@title").InnerText;
                 LabelResult.Text += " (" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
                 LabelDirected.Text = "Directed by: " + nodelist[0].SelectSingleNode("@director").InnerText;
                 LabelActors.Text = "Starring: " + nodelist[0].SelectSingleNode("@actors").InnerText;
                 LabelRating.Text = "Child Rating: " + nodelist[0].SelectSingleNode("@rated").InnerText;
+                LabelDescription.Text = "Plot: " + nodelist[0].SelectSingleNode("@plot").InnerText;
                 ImagePoster.ImageUrl = nodelist[0].SelectSingleNode("@poster").InnerText;
 
                 SqlCommand cmd = null;
+                SqlCommand command = null;
                 string sqlupdate = "";
+                string sqlinsert = "";
                 SqlConnection con = UtilityClass.CreateConnection();
 
                 try
                 {
                     con.Open();
                     sqlupdate = "Update Action Set Counter = Counter + 1 Where Name = @title";
+                    sqlinsert = "UPDATE Action SET PosterUrl = @picture WHERE Name = @title";
                     cmd = new SqlCommand(sqlupdate, con);
+                    command = new SqlCommand(sqlinsert, con);
                     cmd.Parameters.AddWithValue("@title", name);
+                    command.Parameters.AddWithValue("@title", name);
+                    command.Parameters.AddWithValue("@picture", picture.ToString());
+
                     cmd.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
                 }
 
                 catch (Exception ex)
