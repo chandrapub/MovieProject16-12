@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 using System.Xml;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+
 
 namespace MovieProject
 {
@@ -73,6 +69,7 @@ namespace MovieProject
             {
                 XmlNodeList nodelist = doc.SelectNodes("/root/movie");
                 object name = nodelist[0].SelectSingleNode("@title").InnerText;
+                object year = nodelist[0].SelectSingleNode("@year").InnerText;
                 object picture = nodelist[0].SelectSingleNode("@poster").InnerText;
                 LabelResult.Text = nodelist[0].SelectSingleNode("@title").InnerText;
                 LabelResult.Text += " (" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
@@ -91,7 +88,7 @@ namespace MovieProject
                 try
                 {
                     con.Open();
-                    sqlupdate = "Update Action Set Counter = Counter + 1 Where Name = @title";
+                    sqlupdate = "UPDATE Action SET Counter = Counter + 1 WHERE Name = @title";
                     sqlinsert = "UPDATE Action SET PosterUrl = @picture WHERE Name = @title";
                     cmd = new SqlCommand(sqlupdate, con);
                     command = new SqlCommand(sqlinsert, con);
@@ -111,6 +108,26 @@ namespace MovieProject
                 {
                     con.Close();
                 }
+
+                //Trailer
+                string result = "";
+                result = UtilityClass.TrailerAPI(name.ToString(), Convert.ToInt32(year));
+                var movieSearchResult = JsonConvert.DeserializeObject<JObject>(result);
+
+                var items = movieSearchResult["items"];
+                var videoId = items[0]["id"]["videoId"];
+                if (videoId.ToString() != " ")
+                {
+                    youTubeTrailer.Src = $"https://www.youtube.com/embed/{videoId.ToString()}";
+                    LabelTralier.Text = "This movie trailer found";
+                }
+                else
+                {
+                    LabelTralier.Text = "This movie trailer not found";
+                }
+
+
+
             }
 
             else

@@ -1,10 +1,19 @@
 ﻿body {
-    background-color: beige;
+    background-color: gray;
     font-family: 'Ubuntu', sans-serif;
+}
+.main {
+    border: solid red 2px;
+    border-radius: 15px;
+    background-color: white;
+    height: 90%;
+    width: 80%;
+    padding: 2vw;
+   
 }
 .navbar{
     padding:0;
-    margin-bottom : 15vh;
+    margin-bottom : 10vh;
     border:0;
 }
 .caption {
@@ -16,15 +25,15 @@
 
     .caption h2 {
         font-size: 1.2vw;
+        margin-bottom: 2vh;
     }
-.poster{
-   
-    
+.poster img {
+    border-radius: 5px;
 }
     .poster img:hover {       
         opacity: 0.7;
         cursor: pointer;
-        transform: scale(1.05);
+        transform: scale(1.02);
         -webkit-filter: blur(1px);
         filter: blur(1px);
     }
@@ -82,4 +91,13 @@
 
 .mygrdContent th {
     padding: 5px;
+}
+
+.Trailer{
+    align-content:center;
+    margin:auto;
+    text-align:center;
+}
+#youTubeTrailer{
+    margin:auto;
 }

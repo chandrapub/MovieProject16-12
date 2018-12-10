@@ -83,6 +83,13 @@
             <br />
           
            </div>
+        <div class="row Trailer">
+
+              <iframe id="youTubeTrailer" runat="server" width="560" height="315" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen"></iframe>
+            <br />
+            <asp:Label ID="LabelTralier" runat="server" Text="Tralier's status"></asp:Label>
+
+        </div>
       
     </form>
 </body>

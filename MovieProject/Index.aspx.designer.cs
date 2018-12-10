@@ -76,6 +76,24 @@ namespace MovieProject {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
+        /// RepeaterAnimation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterAnimation;
+        
+        /// <summary>
+        /// SqlDataSourceAnimation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAnimation;
+        
+        /// <summary>
         /// ViewResult control.
         /// </summary>
         /// <remarks>
@@ -139,21 +157,21 @@ namespace MovieProject {
         protected global::System.Web.UI.WebControls.Label LabelMessages;
         
         /// <summary>
-        /// Label1 control.
+        /// youTubeTrailer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlIframe youTubeTrailer;
         
         /// <summary>
-        /// Label2 control.
+        /// LabelTralier control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label LabelTralier;
     }
 }
