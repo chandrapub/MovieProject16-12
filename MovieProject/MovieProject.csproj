@@ -84,6 +84,7 @@
     <Content Include="Content\normalize.css" />
     <Content Include="img\ErrorImg.jpg" />
     <Content Include="img\placehold.jpg" />
+    <Content Include="img\search-icon.png" />
     <Content Include="Index.aspx" />
     <Content Include="Content\StyleSheet.css" />
     <Content Include="Scripts\animate.css" />

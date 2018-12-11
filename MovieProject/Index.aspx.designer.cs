@@ -67,13 +67,13 @@ namespace MovieProject {
         protected global::System.Web.UI.WebControls.Repeater RepeaterMovies;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// SqlDataSourceAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAction;
         
         /// <summary>
         /// RepeaterAnimation control.
@@ -92,6 +92,42 @@ namespace MovieProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAnimation;
+        
+        /// <summary>
+        /// RepeaterThriller control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterThriller;
+        
+        /// <summary>
+        /// SqlDataSourceThriller control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceThriller;
+        
+        /// <summary>
+        /// RepeaterScience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterScience;
+        
+        /// <summary>
+        /// SqlDataSourceScience control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceScience;
         
         /// <summary>
         /// ViewResult control.
@@ -137,6 +173,15 @@ namespace MovieProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelActors;
+        
+        /// <summary>
+        /// LabelDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDescription;
         
         /// <summary>
         /// LabelRating control.

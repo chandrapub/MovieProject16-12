@@ -10,7 +10,7 @@
     <link href="Content/StyleSheet.css" rel="stylesheet" />
      <link href="Scripts/animate.css" rel="stylesheet" />
     <link href="Content/normalize.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src ="Scripts/popper.min.js"></script>
@@ -43,11 +43,11 @@
                   <asp:View ID="ViewSearch" runat="server">
                       <div class="search" style="display:flex; justify-content:center; margin-bottom:5vh;">
                        <asp:TextBox ID="TextBoxName" runat="server" placeholder="Search by name.."></asp:TextBox>
-                         <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" Text="Find Movie!" />
+                         <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" CssClass="buttonStyle" />
                           </div>
                        <div class="container repeaterDiv">
                            <h3>Most popular Action Movies</h3>
-            <asp:Repeater ID="RepeaterMovies" runat="server" DataSourceID="SqlDataSource1">
+            <asp:Repeater ID="RepeaterMovies" runat="server" DataSourceID="SqlDataSourceAction">
                  <HeaderTemplate>
                 <table class="row container">
                     
@@ -55,7 +55,7 @@
             <ItemTemplate>
                 <tr class="col-sm-2" style="display:inline-block;">                                   
                     <div class="wrapper">
-                    <td class="poster" style="display:flex; justify-content:center;"><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /><span class="caption"><h2><%# Eval("Name") %></h2></span></td>
+                    <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
                         </div>
                 </tr>
             </ItemTemplate>
@@ -63,7 +63,7 @@
                 </table>
             </FooterTemplate>
         </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MoviesConnectionString2 %>" SelectCommand="SELECT TOP 6 [Name], [Year], [Counter], [PosterUrl] FROM [Action] ORDER BY [Counter] DESC"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSourceAction" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDBConnectionStringNoDuplicate %>" SelectCommand="Select top 6 MovieName, PosterUrl from Movies WHERE FilmCategoryId = 1 order by counter desc"></asp:SqlDataSource>
             <br />
         </div>
 
@@ -77,7 +77,7 @@
             <ItemTemplate>
                 <tr class="col-sm-2" style="display:inline-block;">                                   
                     <div class="wrapper">
-                    <td class="poster" style="display:flex; justify-content:center;"><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /><span class="caption"><h2><%# Eval("Name") %></h2></span></td>
+                   <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
                         </div>
                 </tr>
             </ItemTemplate>
@@ -85,31 +85,84 @@
                 </table>
             </FooterTemplate>
         </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSourceAnimation" runat="server" ConnectionString="<%$ ConnectionStrings:MoviesConnectionString2 %>" SelectCommand="SELECT TOP 6 [Name], [PosterUrl] FROM [Animation] ORDER BY [Counter] DESC"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSourceAnimation" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDBConnectionStringNoDuplicate %>" SelectCommand="Select top 6 MovieName, PosterUrl from Movies WHERE FilmCategoryId = 2 order by counter desc"></asp:SqlDataSource>
             <br />
         </div>
 
+                       <div class="container repeaterDiv">
+                           <h3>Most popular Thriller Movies</h3>
+            <asp:Repeater ID="RepeaterThriller" runat="server" DataSourceID="SqlDataSourceThriller">
+                 <HeaderTemplate>
+                <table class="row container">
+                    
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr class="col-sm-2" style="display:inline-block;">                                   
+                    <div class="wrapper">
+                    <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
+                        </div>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+            <asp:SqlDataSource ID="SqlDataSourceThriller" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDBConnectionStringNoDuplicate %>" SelectCommand="Select top 6 MovieName, PosterUrl from Movies WHERE FilmCategoryId = 3 order by counter desc"></asp:SqlDataSource>
+            <br />
+        </div>
+                      <div class="container repeaterDiv">
+                           <h3>Most popular Science-Fiction Movies</h3>
+            <asp:Repeater ID="RepeaterScience" runat="server" DataSourceID="SqlDataSourceScience">
+                 <HeaderTemplate>
+                <table class="row container">
+                    
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr class="col-sm-2" style="display:inline-block;">                                   
+                    <div class="wrapper">
+                   <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
+                        </div>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+        </asp:Repeater>
+            <asp:SqlDataSource ID="SqlDataSourceScience" runat="server" ConnectionString="<%$ ConnectionStrings:MovieDBConnectionStringNoDuplicate %>" SelectCommand="Select top 6 MovieName, PosterUrl from Movies WHERE FilmCategoryId = 4 order by counter desc"></asp:SqlDataSource>
+            <br />
+        </div>
+
+
+
                   </asp:View>
                 <asp:View ID="ViewResult" runat="server">
-                <div class="searchresult animated fadeIn" id="results">
+                <div class="searchresult animated fadeIn container" id="results">
+                    <div class="row">
+             <div class="col-sm-5" style="display:flex; justify-content:center;">
+         <asp:Image ID="ImagePoster" runat="server" ImageUrl="~/img/placehold.jpg" />
+             </div>
+            <div class="col-sm-7">
              <div class="row" style="display:flex; justify-content:center;">
-         <asp:Image ID="ImagePoster" runat="server" ImageUrl="~/img/placehold.jpg" Width="311px" Height="205px" /></div>
-            
-             <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelResult" runat="server" Text="Result"></asp:Label></div>
-          
+            <asp:Label ID="LabelResult" runat="server" Text="Result" CssClass="resultStyle"></asp:Label></div>
+            <br />
+                <br />
             <div class="row" style="display:flex; justify-content:center;">
             <asp:Label ID="LabelDirected" runat="server"></asp:Label> </div>
-               
+               <br /><br />
                       <div class="row" style="display:flex; justify-content:center;">
                 <asp:Label ID="LabelActors" runat="server"></asp:Label> </div>
-               
+               <br /><br />
+                <div class="row" style="display:flex; justify-content:center;">
+                <asp:Label ID="LabelDescription" runat="server"></asp:Label> </div>
+               <br /><br />
                 
                            <div class="row" style="display:flex; justify-content:center;">
                 <asp:Label ID="LabelRating" runat="server"></asp:Label> 
                                <br />
                                <asp:Label ID="LabelMessages" runat="server"></asp:Label>
              </div>
+                </div>
+                        </div>
                     <div class="row Trailer">
 
               <iframe id="youTubeTrailer" runat="server" width="560" height="315" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen"></iframe>

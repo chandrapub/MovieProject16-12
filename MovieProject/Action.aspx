@@ -33,14 +33,14 @@
   </div>
 </nav>
         <div class="row">
-        <div class="GridviewMoviesDiv col-sm-4" style="height: 70vh; width: 376px; overflow-y: scroll; overflow-x: hidden; margin-left:2vw;">
+        <div class="GridviewMoviesDiv col-sm-4" style="height: 70vh; width: 25vw; overflow-y: auto; overflow-x: hidden; margin-left:2vw;">
             <asp:GridView ID="GridViewMovies" runat="server" AutoGenerateColumns="False" CssClass="mygrdContent" PagerStyle-CssClass="pagerGrid" HeaderStyle-CssClass="headerGrid" RowStyle-CssClass="rowsGrid">
                 <HeaderStyle />
                 <PagerStyle />
                 <Columns>
         <asp:TemplateField>
             <ItemTemplate >
-               <a href="#" style="display:flex; justify-content:center;" runat="server" id="anchor1" onserverclick="anchor1_ServerClick"><%# Eval("Name") %>
+               <a href="#" style="display:flex; justify-content:center;" runat="server" id="anchor1" onserverclick="anchor1_ServerClick"><%# Eval("MovieName") %>
                 </a>
             </ItemTemplate>
         </asp:TemplateField>
@@ -57,25 +57,25 @@
             </div>
            <div class="col-sm-6">
                    <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelResult" runat="server" Text="Result" CssClass="resultStyle"></asp:Label>
+            <asp:Label ID="LabelResult" runat="server" Text="Here you can find all Action Movies" CssClass="resultStyle"></asp:Label>
             <br /> </div>
 
                  <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelDirected" runat="server" Text="Directed by: "></asp:Label> </div>
+            <asp:Label ID="LabelDirected" runat="server"></asp:Label> </div>
             <br />      
                       <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelActors" runat="server" Text="Starring: "></asp:Label> </div>
+                <asp:Label ID="LabelActors" runat="server"></asp:Label> </div>
                 <br />
                 
                            
 
                 <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelDescription" runat="server" Text="Plot: "></asp:Label> </div>
+                <asp:Label ID="LabelDescription" runat="server"></asp:Label> </div>
             <br />
                <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelRating" runat="server" Text="Rating: "></asp:Label> </div>
+                <asp:Label ID="LabelRating" runat="server"></asp:Label> </div>
                                 <div class="row" style="display:flex; justify-content:center;">
-                 <asp:Label ID="LabelMessages" runat="server" Text=" "></asp:Label>
+                 <asp:Label ID="LabelMessages" runat="server"></asp:Label>
 </div>
                </div>
             </div>
@@ -85,9 +85,9 @@
            </div>
         <div class="row Trailer">
 
-              <iframe id="youTubeTrailer" runat="server" width="560" height="315" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen"></iframe>
+              <iframe id="youTubeTrailer" runat="server" width="650" height="380" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen"></iframe>
             <br />
-            <asp:Label ID="LabelTralier" runat="server" Text="Tralier's status"></asp:Label>
+            <asp:Label ID="LabelTralier" runat="server"></asp:Label>
 
         </div>
       

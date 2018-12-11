@@ -15,10 +15,16 @@ namespace MovieProject
         WebClient client;
         protected void Page_Load(object sender, EventArgs e)
         {
-            client = new WebClient();               
+            client = new WebClient();
+            ShowRandom();
             ShowMyMovies();                        
         }
-       
+
+        public void ShowRandom()
+        {
+            
+
+        }
         public void ShowMyMovies()
         {           
             SqlDataReader rdr = null;
@@ -28,7 +34,7 @@ namespace MovieProject
             try
             {              
                 conn.Open();
-                sqlsel = "select * from Action order by name asc";
+                sqlsel = "select * from Movies WHERE FilmCategoryId = 1 order by MovieName asc";
                 cmd = new SqlCommand(sqlsel, conn);
 
                 rdr = cmd.ExecuteReader();
@@ -77,8 +83,11 @@ namespace MovieProject
                 LabelActors.Text = "Starring: " + nodelist[0].SelectSingleNode("@actors").InnerText;
                 LabelRating.Text = "Child Rating: " + nodelist[0].SelectSingleNode("@rated").InnerText;
                 LabelDescription.Text = "Plot: " + nodelist[0].SelectSingleNode("@plot").InnerText;
-                ImagePoster.ImageUrl = nodelist[0].SelectSingleNode("@poster").InnerText;
-
+                if (nodelist[0].SelectSingleNode("@poster").InnerText == "N/A") { ImagePoster.ImageUrl = "~/img/ErrorImg.jpg"; }
+                else
+                {
+                    ImagePoster.ImageUrl = nodelist[0].SelectSingleNode("@poster").InnerText;
+                }
                 SqlCommand cmd = null;
                 SqlCommand command = null;
                 string sqlupdate = "";
@@ -88,8 +97,8 @@ namespace MovieProject
                 try
                 {
                     con.Open();
-                    sqlupdate = "UPDATE Action SET Counter = Counter + 1 WHERE Name = @title";
-                    sqlinsert = "UPDATE Action SET PosterUrl = @picture WHERE Name = @title";
+                    sqlupdate = "UPDATE Movies SET Counter = Counter + 1 WHERE MovieName = @title";
+                    sqlinsert = "UPDATE Movies SET PosterUrl = @picture WHERE MovieName = @title";
                     cmd = new SqlCommand(sqlupdate, con);
                     command = new SqlCommand(sqlinsert, con);
                     cmd.Parameters.AddWithValue("@title", name);

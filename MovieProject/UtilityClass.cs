@@ -12,7 +12,7 @@ namespace MovieProject
         
         public static SqlConnection CreateConnection()
         {          
-            SqlConnection conn = new SqlConnection(@"data source = LAPTOP-9C071575; integrated security = true; database = Movies");       
+            SqlConnection conn = new SqlConnection(@"data source = LAPTOP-9C071575; integrated security = true; database = MovieDB");       
             return conn;
         }
         public static string RequestAPI(string search)
@@ -26,7 +26,8 @@ namespace MovieProject
         {
             WebClient client = new WebClient();
             var apiKey = "AIzaSyBv1JLAkCV4giMLrTUKBXfDI4HTIOIeqAo";
-            string searchWord = search.Trim() + year + "Movie Trailer";
+            string cleanSeach = search.Replace(" ", "+");
+            string searchWord = cleanSeach + year + "Movie Trailer";
             string result = "";
            
             string youtubeAPI = $"https://www.googleapis.com/youtube/v3/search?&part=snippet&q={searchWord}&type=trailer&key={apiKey}";
