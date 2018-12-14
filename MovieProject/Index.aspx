@@ -23,7 +23,7 @@
     <form id="form1" runat="server">
         
            
-     <nav class="navbar navbar-inverse">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand active" href="Index.aspx">The Open Movie Database</a>
@@ -31,9 +31,9 @@
     <ul class="nav navbar-nav">
       
       <li><a href="Action.aspx">Action</a></li>
-      <li><a href="#">Science-Fiction</a></li>
-      <li><a href="#">Thriller</a></li>
-        <li><a href="#">Animated</a></li>
+      <li><a href="Science.aspx">Science-Fiction</a></li>
+      <li><a href="Thriller.aspx">Thriller</a></li>
+        <li><a href="Animation.aspx">Animated</a></li>
     </ul>
   </div>
 </nav>
@@ -43,7 +43,7 @@
                   <asp:View ID="ViewSearch" runat="server">
                       <div class="search" style="display:flex; justify-content:center; margin-bottom:5vh;">
                        <asp:TextBox ID="TextBoxName" runat="server" placeholder="Search by name.."></asp:TextBox>
-                         <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" CssClass="buttonStyle" />
+                         <asp:Button ID="ButtonFind" runat="server" OnClick="ButtonFind_Click" CssClass="buttonStyle"  />
                           </div>
                        <div class="container repeaterDiv">
                            <h3>Most popular Action Movies</h3>
@@ -136,40 +136,58 @@
 
                   </asp:View>
                 <asp:View ID="ViewResult" runat="server">
-                <div class="searchresult animated fadeIn container" id="results">
-                    <div class="row">
-             <div class="col-sm-5" style="display:flex; justify-content:center;">
-         <asp:Image ID="ImagePoster" runat="server" ImageUrl="~/img/placehold.jpg" />
-             </div>
-            <div class="col-sm-7">
-             <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelResult" runat="server" Text="Result" CssClass="resultStyle"></asp:Label></div>
-            <br />
-                <br />
-            <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelDirected" runat="server"></asp:Label> </div>
-               <br /><br />
-                      <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelActors" runat="server"></asp:Label> </div>
-               <br /><br />
-                <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelDescription" runat="server"></asp:Label> </div>
-               <br /><br />
-                
-                           <div class="row" style="display:flex; justify-content:center;">
-                <asp:Label ID="LabelRating" runat="server"></asp:Label> 
-                               <br />
-                               <asp:Label ID="LabelMessages" runat="server"></asp:Label>
-             </div>
-                </div>
-                        </div>
-                    <div class="row Trailer">
+                <div class="searchresult animated fadeIn row" id="results">                    
 
-              <iframe id="youTubeTrailer" runat="server" width="560" height="315" frameborder="2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen"></iframe>
+                         
+            
+            <div class="col-sm-4 imagePoster" style="display:flex; justify-content:center; padding:0;">
+             <asp:Image ID="ImagePoster" runat="server" Height="481px" ImageUrl="~/img/placehold.jpg" Width="369px" />
+            </div>
+           <div class="movieinfo col-sm-8">
+                   <div class="row" style="display:flex; justify-content:center;">
+            <asp:Label ID="LabelResult" runat="server" CssClass="resultStyle"></asp:Label>
+             </div>
+
+                 <div class="row" style="display:flex; justify-content:center; padding:1vw;">
+            <asp:Label ID="LabelDirected" runat="server"></asp:Label> </div>
+            
+                      <div class="row" style="display:flex; justify-content:center; padding:1vw;">
+                <asp:Label ID="LabelActors" runat="server"></asp:Label> </div>
+               
+               <div class="row" style="display:flex; justify-content:center; padding:2vw;">
+                <asp:Label ID="LabelDescription" runat="server"></asp:Label> </div>  
+               <br />
+              
+               <div class="row infoStyle" style="text-align:center; padding:1.5vw; position:absolute; bottom:0px;">
+                  <asp:Label ID="LabelLanguage" runat="server"></asp:Label> 
+                 <br /><br />
+                <asp:Label ID="LabelImdbRating" runat="server"></asp:Label> 
+               <br /><br />
+                   
+                <asp:Label ID="LabelRating" runat="server"></asp:Label> 
+                   <br /><br />
+                    <asp:Label ID="LabelRuntime" runat="server"></asp:Label>
+               
+               </div>
+
+           </div>                
+               
+               <div class="row" style="display:flex; justify-content:center;">
+                 <asp:Label ID="LabelMessages" runat="server"></asp:Label>
+</div>
+               <div class="row Trailer">
+
+              <iframe id="youTubeTrailer" runat="server" width="100%" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen" style="margin:0; padding:0;"></iframe>
             <br />
-            <asp:Label ID="LabelTralier" runat="server" Text="Tralier's status"></asp:Label>
+            <asp:Label ID="LabelTralier" runat="server"></asp:Label>
 
         </div>
+            
+                  
+
+
+
+
             
         </div>
                 

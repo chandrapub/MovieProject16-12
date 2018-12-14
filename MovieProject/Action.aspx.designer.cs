@@ -76,6 +76,24 @@ namespace MovieProject {
         protected global::System.Web.UI.WebControls.Label LabelDescription;
         
         /// <summary>
+        /// LabelLanguage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelLanguage;
+        
+        /// <summary>
+        /// LabelImdbRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelImdbRating;
+        
+        /// <summary>
         /// LabelRating control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace MovieProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelRating;
+        
+        /// <summary>
+        /// LabelRuntime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRuntime;
         
         /// <summary>
         /// LabelMessages control.

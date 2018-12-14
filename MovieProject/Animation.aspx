@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Action.aspx.cs" Inherits="MovieProject.Action" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Animation.aspx.cs" Inherits="MovieProject.Animation" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Action Movies</title>  
+    <title>Animated Movies</title>  
     <%--  <link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
      <link href="Content/bootstrap2.min.css" rel="stylesheet" />
     <link href="Content/StyleSheet.css" rel="stylesheet" />
@@ -25,10 +25,10 @@
     </div>
     <ul class="nav navbar-nav navigation">
       
-      <li class="active"><a href="Action.aspx">Action</a></li>
-      <li><a href="#">Science-Fiction</a></li>
-      <li><a href="#">Thriller</a></li>
-        <li><a href="#">Animated</a></li>
+      <li><a href="Action.aspx">Action</a></li>
+      <li><a href="Science.aspx">Science-Fiction</a></li>
+      <li><a href="Thriller.aspx">Thriller</a></li>
+       <li class="active"><a href="Animation.aspx">Animated</a></li>
     </ul>
   </div>
 </nav>
@@ -57,7 +57,7 @@
             </div>
            <div class="movieinfo col-sm-7 col align-self-end">
                    <div class="row" style="display:flex; justify-content:center;">
-            <asp:Label ID="LabelResult" runat="server" Text="Here you can find all Action Movies" CssClass="resultStyle"></asp:Label>
+            <asp:Label ID="LabelResult" runat="server" Text="Here you can find all Animated Movies" CssClass="resultStyle"></asp:Label>
              </div>
 
                  <div class="row" style="display:flex; justify-content:center; padding:1vw;">
@@ -105,3 +105,4 @@
     </form>
 </body>
 </html>
+

@@ -11,30 +11,30 @@ using Newtonsoft.Json.Linq;
 
 namespace MovieProject
 {
-    public partial class Action : System.Web.UI.Page
+    public partial class Animation : System.Web.UI.Page
     {
         WebClient client;
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new WebClient();
-            ShowMyMovies();                        
+            ShowMyMovies();
         }
 
         public void ShowMyMovies()
-        {           
+        {
             SqlDataReader rdr = null;
             SqlCommand cmd = null;
             string sqlsel = "";
             SqlConnection conn = UtilityClass.CreateConnection();
             try
-            {              
+            {
                 conn.Open();
-                sqlsel = "select * from Movies WHERE FilmCategoryId = 1 order by MovieName asc";
+                sqlsel = "select * from Movies WHERE FilmCategoryId = 2 order by MovieName asc";
                 cmd = new SqlCommand(sqlsel, conn);
 
                 rdr = cmd.ExecuteReader();
 
-                GridViewMovies.DataSource= rdr;
+                GridViewMovies.DataSource = rdr;
                 GridViewMovies.DataBind();
 
             }
@@ -57,7 +57,7 @@ namespace MovieProject
 
             var href = anchor.InnerText;
             //--do something
-          
+
             string reply = "";
             reply = UtilityClass.RequestAPI(href);
 
@@ -88,11 +88,11 @@ namespace MovieProject
                     ImagePoster.ImageUrl = nodelist[0].SelectSingleNode("@poster").InnerText;
                 }
 
-               // string rating = nodelist[0].SelectSingleNode("@imdbRating").InnerText;
-               // decimal m = Convert.ToDecimal(rating);
+                // string rating = nodelist[0].SelectSingleNode("@imdbRating").InnerText;
+                // decimal m = Convert.ToDecimal(rating);
 
-               //// if (m > 7.0m) { LabelImdbRating.ForeColor = Color.Green; }
-               //// else if (m < 3.0m) { LabelImdbRating.ForeColor = Color.Red; }
+                //// if (m > 7.0m) { LabelImdbRating.ForeColor = Color.Green; }
+                //// else if (m < 3.0m) { LabelImdbRating.ForeColor = Color.Red; }
 
 
 

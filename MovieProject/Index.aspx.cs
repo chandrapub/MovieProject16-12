@@ -51,8 +51,12 @@ namespace MovieProject
                 LabelResult.Text += " (" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
                 LabelDirected.Text = "Directed by: " + nodelist[0].SelectSingleNode("@director").InnerText;
                 LabelActors.Text = "Starring: " + nodelist[0].SelectSingleNode("@actors").InnerText;
+                LabelLanguage.Text = "Language: " + nodelist[0].SelectSingleNode("@language").InnerText;
+                LabelImdbRating.Text = "Imdb Rating: " + nodelist[0].SelectSingleNode("@imdbRating").InnerText + "/10";
+                LabelImdbRating.Text += " Votes: " + nodelist[0].SelectSingleNode("@imdbVotes").InnerText;
+                LabelRuntime.Text = "Runtime: " + nodelist[0].SelectSingleNode("@runtime").InnerText;
                 LabelRating.Text = "Child Rating: " + nodelist[0].SelectSingleNode("@rated").InnerText;
-                //LabelDescription.Text = "Plot: " + nodelist[0].SelectSingleNode("@plot").InnerText;
+                LabelDescription.Text = "Plot: " + nodelist[0].SelectSingleNode("@plot").InnerText;
 
                 //in case of Missing image
                 if (nodelist[0].SelectSingleNode("@poster").InnerText == "N/A") { ImagePoster.ImageUrl = "~/img/ErrorImg.jpg"; }
@@ -103,12 +107,12 @@ namespace MovieProject
                 if (checkVideo != "")
                 {
                     youTubeTrailer.Src = $"https://www.youtube.com/embed/{checkVideo}";
-                    LabelTralier.Text = "This movie trailer found";
+                   
                 }
                 else
                 {
                     youTubeTrailer.Src = "";
-                    LabelTralier.Text = "This movie trailer not found";
+                   
                 }
 
             }
@@ -153,6 +157,10 @@ namespace MovieProject
                 LabelResult.Text += " (" + nodelist[0].SelectSingleNode("@year").InnerText + ")";
                 LabelDirected.Text = "Directed by: " + nodelist[0].SelectSingleNode("@director").InnerText;
                 LabelActors.Text = "Starring: " + nodelist[0].SelectSingleNode("@actors").InnerText;
+                LabelLanguage.Text = "Language: " + nodelist[0].SelectSingleNode("@language").InnerText;
+                LabelImdbRating.Text = "Imdb Rating: " + nodelist[0].SelectSingleNode("@imdbRating").InnerText + "/10";
+                LabelImdbRating.Text += " Votes: " + nodelist[0].SelectSingleNode("@imdbVotes").InnerText;
+                LabelRuntime.Text = "Runtime: " + nodelist[0].SelectSingleNode("@runtime").InnerText;
                 LabelRating.Text = "Child Rating: " + nodelist[0].SelectSingleNode("@rated").InnerText;
                 LabelDescription.Text = "Plot: " + nodelist[0].SelectSingleNode("@plot").InnerText;
                 ImagePoster.ImageUrl = nodelist[0].SelectSingleNode("@poster").InnerText;
@@ -196,11 +204,11 @@ namespace MovieProject
                 if (videoId.ToString() != " ")
                 {
                     youTubeTrailer.Src = $"https://www.youtube.com/embed/{videoId.ToString()}";
-                    LabelTralier.Text = "This movie trailer found";
+                   
                 }
                 else
                 {
-                    LabelTralier.Text = "This movie trailer not found";
+                    LabelMessages.Text = "This movie trailer not found";
                 }
 
 
