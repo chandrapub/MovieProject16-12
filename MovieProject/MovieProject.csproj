@@ -82,7 +82,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap2.min.css" />
+    <Content Include="Content\md-bootstrap.min.css" />
+    <Content Include="Content\mdb.css" />
+    <Content Include="Content\mdb.lite.css" />
+    <Content Include="Content\mdb.lite.min.css" />
+    <Content Include="Content\mdb.min.css" />
     <Content Include="Content\normalize.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\style.min.css" />
     <Content Include="img\audience.jpg" />
     <Content Include="img\ErrorImg.jpg" />
     <Content Include="img\placehold.jpg" />
@@ -128,6 +135,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="search.aspx" />
     <Content Include="Thriller.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -160,6 +168,13 @@
     </Compile>
     <Compile Include="Science.aspx.designer.cs">
       <DependentUpon>Science.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
     </Compile>
     <Compile Include="Thriller.aspx.cs">
       <DependentUpon>Thriller.aspx</DependentUpon>

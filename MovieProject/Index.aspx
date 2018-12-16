@@ -23,18 +23,20 @@
     <form id="form1" runat="server">
         
            
-     <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid ">
     <div class="navbar-header">
       <a class="navbar-brand active" href="Index.aspx">The Open Movie Database</a>
     </div>
-    <ul class="nav navbar-nav">
+    
       
+      <ul class="nav navbar-nav">
       <li><a href="Action.aspx">Action</a></li>
       <li><a href="Science.aspx">Science-Fiction</a></li>
       <li><a href="Thriller.aspx">Thriller</a></li>
         <li><a href="Animation.aspx">Animated</a></li>
     </ul>
+          
   </div>
 </nav>
         
@@ -53,9 +55,9 @@
                     
             </HeaderTemplate>
             <ItemTemplate>
-                <tr class="col-sm-2" style="display:inline-block;">                                   
+                <tr class="col-xs-12 col-sm-6 col-lg-2" style="display:inline-block;">                                   
                     <div class="wrapper">
-                    <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
+                    <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" /></td>
                         </div>
                 </tr>
             </ItemTemplate>
@@ -75,9 +77,9 @@
                     
             </HeaderTemplate>
             <ItemTemplate>
-                <tr class="col-sm-2" style="display:inline-block;">                                   
+                <tr class="col-sm-6 col-lg-2" style="display:inline-block;">                                   
                     <div class="wrapper">
-                   <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
+                   <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url"/></td>
                         </div>
                 </tr>
             </ItemTemplate>
@@ -97,9 +99,9 @@
                     
             </HeaderTemplate>
             <ItemTemplate>
-                <tr class="col-sm-2" style="display:inline-block;">                                   
+                <tr class="col-sm-6 col-md-3 col-lg-2" style="display:inline-block;">                                   
                     <div class="wrapper">
-                    <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
+                    <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" /></td>
                         </div>
                 </tr>
             </ItemTemplate>
@@ -118,9 +120,9 @@
                     
             </HeaderTemplate>
             <ItemTemplate>
-                <tr class="col-sm-2" style="display:inline-block;">                                   
+                <tr class="col-sm-6 col-md-3 col-lg-2" style="display:inline-block;">                                   
                     <div class="wrapper">
-                   <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url" height="200vh" /></td>
+                   <td class="poster" style="display:flex; justify-content:center;"><a class="caption" href="#" runat="server" id="anchor2" onserverclick="anchor2_ServerClick"><%# Eval("MovieName") %></a><img src="<%# Eval("PosterUrl") %>" alt="Poster-url"/></td>
                         </div>
                 </tr>
             </ItemTemplate>
@@ -140,10 +142,10 @@
 
                          
             
-            <div class="col-sm-4 imagePoster" style="display:flex; justify-content:center; padding:0;">
-             <asp:Image ID="ImagePoster" runat="server" Height="481px" ImageUrl="~/img/placehold.jpg" Width="369px" />
+            <div class="col-sm-6 col-lg-4 imagePoster" style="display:flex; justify-content:center; padding:0;">
+             <asp:Image ID="ImagePoster" runat="server" />
             </div>
-           <div class="movieinfo col-sm-8">
+           <div class="movieinfo col-sm-6 col-lg-8">
                    <div class="row" style="display:flex; justify-content:center;">
             <asp:Label ID="LabelResult" runat="server" CssClass="resultStyle"></asp:Label>
              </div>
@@ -158,7 +160,7 @@
                 <asp:Label ID="LabelDescription" runat="server"></asp:Label> </div>  
                <br />
               
-               <div class="row infoStyle" style="text-align:center; padding:1.5vw; position:absolute; bottom:0px;">
+               <div class="row infoStyle">
                   <asp:Label ID="LabelLanguage" runat="server"></asp:Label> 
                  <br /><br />
                 <asp:Label ID="LabelImdbRating" runat="server"></asp:Label> 
@@ -175,7 +177,7 @@
                <div class="row" style="display:flex; justify-content:center;">
                  <asp:Label ID="LabelMessages" runat="server"></asp:Label>
 </div>
-               <div class="row Trailer">
+               <div class="row Trailer" style="bottom: 20vh;">
 
               <iframe id="youTubeTrailer" runat="server" width="100%" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen" style="margin:0; padding:0;"></iframe>
             <br />

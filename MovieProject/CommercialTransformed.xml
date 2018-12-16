@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<companyInfo xmlns:c="http://my.company.com">
+
+  <commercial class="ComId" id="1">
+
+    <CompanyName>Yensid Tlaw</CompanyName>
+
+    <Website>www.myfantasy.com</Website>
+
+    <Address>Yeti Street 48DowntownFarawayland</Address>
+
+    <Telephone>(111) 22222222</Telephone>
+
+    <CompanyLogo>logo1.jpg</CompanyLogo>
+
+  </commercial>
+
+  <commercial class="ComId" id="2">
+
+    <CompanyName>Tinycomp</CompanyName>
+
+    <Website>www.myhugo.com</Website>
+
+    <Address></Address>
+
+    <Telephone></Telephone>
+
+    <CompanyLogo></CompanyLogo>
+
+  </commercial>
+
+  <commercial class="ComId" id="3">
+
+    <CompanyName>Cartoons</CompanyName>
+
+    <Website>www.lotsofcartoons.com</Website>
+
+    <Address>Champs ElyseesHolte, Denmark</Address>
+
+    <Telephone>55+ 66666666</Telephone>
+
+    <CompanyLogo>logo3.jpg</CompanyLogo>
+
+  </commercial>
+
+  <commercial class="ComId" id="4">
+
+    <CompanyName>Web Developers</CompanyName>
+
+    <Website>www.superstudents.com</Website>
+
+    <Address></Address>
+
+    <Telephone></Telephone>
+
+    <CompanyLogo>logo4.jpg</CompanyLogo>
+
+  </commercial>
+
+</companyInfo>

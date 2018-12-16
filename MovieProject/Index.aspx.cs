@@ -16,6 +16,8 @@ using System.Data.SqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web.UI.HtmlControls;
+using System.Configuration;
+using System.Data;
 
 namespace MovieProject
 {
@@ -26,9 +28,11 @@ namespace MovieProject
         protected void Page_Load(object sender, EventArgs e)
         {
             client = new WebClient();
+            TransformXml();
+            PopulateXMLtoDB();
 
         }
-
+       
         protected void ButtonFind_Click(object sender, EventArgs e)
         {
             MultiViewMovies.ActiveViewIndex = 1;
@@ -220,7 +224,46 @@ namespace MovieProject
 
 
         }
+        public void TransformXml()
+        {
 
+            string sourcefile = Server.MapPath("Commercial.xml");
+            string xsltfile = Server.MapPath("Commercial.xslt");
+            string destinationfile = Server.MapPath("CommercialTransformed.xml");
+            string xslthtmlfile = Server.MapPath("CommercialToHTML.xslt");
+            string destinationhtmlfile = Server.MapPath("CommercialTransformed.html");
+
+            XMLCommercialClass xmlfile1 = new XMLCommercialClass(sourcefile, xsltfile, destinationfile);
+            xmlfile1.CreateToTransformXml();
+
+            HtmlCommercialClass htmlfile1 = new HtmlCommercialClass(sourcefile, xslthtmlfile, destinationhtmlfile);
+            htmlfile1.CreateToTransformHtml();
+
+        }
+        public void PopulateXMLtoDB()
+        {
+            string cs = ConfigurationManager.ConnectionStrings["MovieDBConnectionStringNoDuplicate"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                DataSet ds = new DataSet();
+                ds.ReadXml(Server.MapPath("~/CommercialTransformed.xml"));
+
+                DataTable dtCommercial = ds.Tables["commercial"];
+                conn.Open();
+                using (SqlBulkCopy bc = new SqlBulkCopy(conn))
+                {
+                    bc.DestinationTableName = "Commercials";
+                    bc.ColumnMappings.Add("ID", "ID");
+                    bc.ColumnMappings.Add("CompanyName", "CompanyName");
+                    bc.ColumnMappings.Add("Website", "Website");
+                    bc.ColumnMappings.Add("Address", "Address");
+                    bc.ColumnMappings.Add("Telephone", "Telephone");
+                    bc.ColumnMappings.Add("CompanyLogo", "CompanyLogo");
+                    bc.WriteToServer(dtCommercial);
+                }
+
+            }
+        }
 
     }
 }

@@ -26,14 +26,14 @@
     <ul class="nav navbar-nav navigation">
       
       <li class="active"><a href="Action.aspx">Action</a></li>
-      <li><a href="#">Science-Fiction</a></li>
-      <li><a href="#">Thriller</a></li>
-        <li><a href="#">Animated</a></li>
+      <li><a href="Science.aspx">Science-Fiction</a></li>
+      <li><a href="Thriller.aspx">Thriller</a></li>
+        <li><a href="Animation.aspx">Animated</a></li>
     </ul>
   </div>
 </nav>
-        <div class="container main" style="width:90%;">
-        <div class="GridviewMoviesDiv col-sm-4" style="height: 65vh; width: 25vw; overflow-y: auto; overflow-x: hidden; margin-left:2vw;">
+        <div class="container main">
+        <div class="GridviewMoviesDiv col-md-4 col-sm-12 col-xs-12">
             <asp:GridView ID="GridViewMovies" runat="server" AutoGenerateColumns="False" CssClass="mygrdContent" PagerStyle-CssClass="pagerGrid" HeaderStyle-CssClass="headerGrid" RowStyle-CssClass="rowsGrid">
                 <HeaderStyle />
                 <PagerStyle />
@@ -50,12 +50,12 @@
 
             </asp:GridView>
             </div>
-        <div class="info col-sm-8">     
+        <div class="info col-md-8 col-sm-12 col-xs-12">     
             
-            <div class="col-sm-5 imagePoster" style="display:flex; justify-content:center; padding:0;">
-             <asp:Image ID="ImagePoster" runat="server" Height="481px" Width="369px" />
+            <div class="col-xs-12 col-sm-5 imagePoster" style="display:flex; justify-content:center; padding:0;">
+             <asp:Image ID="ImagePoster" runat="server"/>
             </div>
-           <div class="movieinfo col-sm-7 col align-self-end">
+           <div class="movieinfo col-xs-12 col-sm-7 col align-self-end">
                    <div class="row" style="display:flex; justify-content:center;">
             <asp:Label ID="LabelResult" runat="server" Text="Here you can find all Action Movies" CssClass="resultStyle"></asp:Label>
              </div>
@@ -89,6 +89,7 @@
 </div>
               
             </div>
+
              <div class="row Trailer">
 
               <iframe id="youTubeTrailer" runat="server" width="100%" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen= "allowfullscreen" style="margin:0; padding:0;"></iframe>

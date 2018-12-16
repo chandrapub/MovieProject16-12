@@ -33,8 +33,8 @@
     </ul>
   </div>
 </nav>
-        <div class="container main" style="width:90%;">
-        <div class="GridviewMoviesDiv col-sm-4" style="height: 65vh; width: 25vw; overflow-y: auto; overflow-x: hidden; margin-left:2vw;">
+        <div class="container main">
+        <div class="GridviewMoviesDiv col-md-4 col-xs-12">
             <asp:GridView ID="GridViewMovies" runat="server" AutoGenerateColumns="False" CssClass="mygrdContent" PagerStyle-CssClass="pagerGrid" HeaderStyle-CssClass="headerGrid" RowStyle-CssClass="rowsGrid">
                 <HeaderStyle />
                 <PagerStyle />
@@ -51,10 +51,10 @@
 
             </asp:GridView>
             </div>
-        <div class="info col-sm-8">     
+        <div class="info col-md-8 col-xs-12">     
             
             <div class="col-sm-5 imagePoster" style="display:flex; justify-content:center; padding:0;">
-             <asp:Image ID="ImagePoster" runat="server" Height="481px" Width="369px" />
+             <asp:Image ID="ImagePoster" runat="server"/>
             </div>
            <div class="movieinfo col-sm-7 col align-self-end">
                    <div class="row" style="display:flex; justify-content:center;">

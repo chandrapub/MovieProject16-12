@@ -34,7 +34,7 @@ namespace MovieProject
 
                 rdr = cmd.ExecuteReader();
 
-                GridViewMovies.DataSource= rdr;
+                GridViewMovies.DataSource = rdr;
                 GridViewMovies.DataBind();
 
             }
