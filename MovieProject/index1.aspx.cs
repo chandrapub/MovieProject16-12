@@ -4,10 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
-using System.Net;
-using System.Collections.Specialized;
-using System.Text;
 using System.IO;
 using System.Xml;
 using System.Drawing;
@@ -21,18 +17,15 @@ using System.Data;
 
 namespace MovieProject
 {
-    public partial class index : System.Web.UI.Page
+    public partial class index1 : System.Web.UI.Page
     {
-
-        WebClient client;
         protected void Page_Load(object sender, EventArgs e)
         {
-            client = new WebClient();
             TransformXml();
-            //PopulateXMLtoDB();
+        
 
         }
-       
+
         protected void ButtonFind_Click(object sender, EventArgs e)
         {
             MultiViewMovies.ActiveViewIndex = 1;
@@ -111,7 +104,7 @@ namespace MovieProject
                 if (checkVideo != "")
                 {
                     youTubeTrailer.Src = $"https://www.youtube.com/embed/{checkVideo}";
-                   
+
                 }
                 else
                 {
@@ -142,7 +135,7 @@ namespace MovieProject
                 return;
 
             var href = anchor.InnerText;
-            
+
 
             string reply = "";
             reply = UtilityClass.RequestAPI(href);
@@ -209,7 +202,7 @@ namespace MovieProject
                 if (videoId.ToString() != " ")
                 {
                     youTubeTrailer.Src = $"https://www.youtube.com/embed/{videoId.ToString()}";
-                   
+
                 }
                 else
                 {
@@ -265,6 +258,5 @@ namespace MovieProject
 
             }
         }
-
     }
 }

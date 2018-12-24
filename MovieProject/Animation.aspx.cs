@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Web.UI.HtmlControls;
 using System.Xml;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
-
 
 namespace MovieProject
 {
@@ -130,14 +129,30 @@ namespace MovieProject
                 string result = "";
                 result = UtilityClass.TrailerAPI(name.ToString(), Convert.ToInt32(year));
                 var movieSearchResult = JsonConvert.DeserializeObject<JObject>(result);
-
+                File.WriteAllText(Server.MapPath("~/MyFiles/LatestTrailer.json"), result);
                 var items = movieSearchResult["items"];
                 var videoId = items[0]["id"]["videoId"];
-                if (videoId.ToString() != " ")
+                string checkVideo = videoId == null ? "" : videoId.ToString();
+                //if (videoId.ToString() != " ")
+                if (checkVideo != "")
                 {
-                    youTubeTrailer.Src = $"https://www.youtube.com/embed/{videoId.ToString()}";
-                    LabelTralier.Text = "This movie trailer found";
+                    youTubeTrailer.Src = $"https://www.youtube.com/embed/{checkVideo}";
+
                 }
+
+
+
+                //string result = "";
+                //result = UtilityClass.TrailerAPI(name.ToString(), Convert.ToInt32(year));
+                //var movieSearchResult = JsonConvert.DeserializeObject<JObject>(result);
+
+                //var items = movieSearchResult["items"];
+                //var videoId = items[0]["id"]["videoId"];
+                //if (videoId.ToString() != " ")
+                //{
+                //    youTubeTrailer.Src = $"https://www.youtube.com/embed/{videoId.ToString()}";
+                //    LabelTralier.Text = "This movie trailer found";
+                //}
                 else
                 {
                     LabelTralier.Text = "This movie trailer not found";

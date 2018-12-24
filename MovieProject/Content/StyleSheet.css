@@ -63,10 +63,32 @@
     z-index: 2;
 }
  
-.repeaterDiv h3{
+/*Comercial style part*/
+
+.myitem {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.shadow {
+    box-shadow: 20px 20px 50px grey;
+    width: 20%;
+    height: 30%;
+}
+
+.mytable {
+    background-color: green;
+    border-bottom-style: groove;
+}
+
+/*Comercial style legend*/ 
+
+.repeaterDiv h3 {
     font-size: 1.2vw;
-    text-align:left;
-    font-weight:bold;
+    text-align: left;
+    font-weight: bold;
 }
 .resultStyle{
     font-size: 2vw;

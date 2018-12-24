@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
 using System.Xml;
 using System.Xml.Xsl;
 using System.IO;
@@ -13,7 +10,7 @@ using System.Net;
 
 namespace MovieProject
 {
-    public class XMLCommercialClass
+    public class XmlCommercialClass
     {
         private string sourcefile { get; set; }
         public string xsltfile { get; set; }
@@ -22,7 +19,7 @@ namespace MovieProject
         //public string destinationhtmlfile { get; set; }
 
 
-        public XMLCommercialClass(string sourcefile, string xsltfile, string destinationfile)
+        public XmlCommercialClass(string sourcefile, string xsltfile, string destinationfile)
         {
             this.sourcefile = sourcefile;
             this.xsltfile = xsltfile;
@@ -55,7 +52,7 @@ namespace MovieProject
         }
         public void CreateToTransformHtml()
         {
-           
+
             FileStream nsfshtml = new FileStream(destinationhtmlfile, FileMode.Create);
             XslCompiledTransform nsxcthtml = new XslCompiledTransform();
             nsxcthtml.Load(xslthtmlfile);

@@ -229,15 +229,6 @@ namespace MovieProject {
         protected global::System.Web.UI.WebControls.Label LabelMessages;
         
         /// <summary>
-        /// youTubeTrailer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe youTubeTrailer;
-        
-        /// <summary>
         /// LabelTralier control.
         /// </summary>
         /// <remarks>
@@ -245,5 +236,14 @@ namespace MovieProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelTralier;
+        
+        /// <summary>
+        /// youTubeTrailer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlIframe youTubeTrailer;
     }
 }

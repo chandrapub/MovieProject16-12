@@ -10,7 +10,7 @@
 namespace MovieProject {
     
     
-    public partial class Action {
+    public partial class index1 {
         
         /// <summary>
         /// form1 control.
@@ -22,138 +22,93 @@ namespace MovieProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// GridViewMovies control.
+        /// MultiViewMovies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewMovies;
+        protected global::System.Web.UI.WebControls.MultiView MultiViewMovies;
         
         /// <summary>
-        /// ImagePoster control.
+        /// ViewSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagePoster;
+        protected global::System.Web.UI.WebControls.View ViewSearch;
         
         /// <summary>
-        /// LabelResult control.
+        /// RepeaterMovies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelResult;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterMovies;
         
         /// <summary>
-        /// LabelDirected control.
+        /// SqlDataSourceAction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDirected;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAction;
         
         /// <summary>
-        /// LabelActors control.
+        /// RepeaterAnimation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelActors;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterAnimation;
         
         /// <summary>
-        /// LabelDescription control.
+        /// SqlDataSourceAnimation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDescription;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAnimation;
         
         /// <summary>
-        /// LabelLanguage control.
+        /// RepeaterThriller control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelLanguage;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterThriller;
         
         /// <summary>
-        /// LabelImdbRating control.
+        /// SqlDataSourceThriller control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelImdbRating;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceThriller;
         
         /// <summary>
-        /// LabelRating control.
+        /// RepeaterScience control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRating;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterScience;
         
         /// <summary>
-        /// LabelRuntime control.
+        /// SqlDataSourceScience control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRuntime;
-        
-        /// <summary>
-        /// LabelMessages control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMessages;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// RepeaterCommercial control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterCommercial;
-        
-        /// <summary>
-        /// youTubeTrailer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlIframe youTubeTrailer;
-        
-        /// <summary>
-        /// LabelTralier control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTralier;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceScience;
     }
 }

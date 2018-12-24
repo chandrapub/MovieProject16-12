@@ -11,8 +11,8 @@ namespace MovieProject
     {
         
         public static SqlConnection CreateConnection()
-        {          
-            SqlConnection conn = new SqlConnection(@"data source = LAPTOP-9C071575; integrated security = true; database = MovieDB");       
+        {
+            SqlConnection conn = new SqlConnection(@"data source = DESKTOP-F8MV33J\SQLEXPRESS; integrated security = true; database = MovieDB");
             return conn;
         }
         public static string RequestAPI(string search)
@@ -34,6 +34,15 @@ namespace MovieProject
             result = client.DownloadString(youtubeAPI);
             return result;
         }
+
+        //<compilers>
+        //compiler language = "c#;cs;csharp" extension=".cs"
+        //type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+        //warningLevel="4" compilerOptions="/langversion:default /nowarn:1659;1699;1701"/>
+        //<compiler language = "vb;vbs;visualbasic;vbscript" extension=".vb"
+        //type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.VBCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+        //warningLevel="4" compilerOptions="/langversion:default /nowarn:41008 /define:_MYTYPE=\&quot;Web\&quot; /optionInfer+"/>
+        //</compilers>
 
         
         
